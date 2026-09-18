@@ -1,0 +1,3344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo profesional de pirotecnia para celebraciones responsables." />
+  <title>FeliX Pirotecnia | Enciende lo extraordinario</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #ed1c24;
+      --red-dark: #bd1118;
+      --red-soft: #fff0f0;
+      --white: #ffffff;
+      --ink: #191919;
+      --muted: #666666;
+      --line: #eeeeee;
+      --shadow: 0 18px 50px rgba(90, 0, 5, .14);
+      --neon-glow: 0 8px 24px rgba(237, 28, 36, .22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: #fff;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      margin: 14px 0 18px;
+    }
+
+    .section-title span {
+      color: var(--red);
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(225, 6, 0, .1);
+    }
+
+    nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 1.18rem;
+    }
+
+    .logo-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--red);
+      border-radius: 50% 50% 50% 10%;
+      transform: rotate(-45deg);
+      box-shadow: var(--neon-glow);
+    }
+
+    .logo-mark span {
+      transform: rotate(45deg);
+      font-size: 1.3rem;
+    }
+
+    .logo b {
+      color: var(--red);
+    }
+
+    .nav-links {
+      order: 2;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: .25s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta,
+    .btn-primary {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #fff;
+      background: var(--red);
+      padding: 13px 21px;
+      border-radius: 4px;
+      font-weight: 800;
+      box-shadow: var(--neon-glow);
+      transition: .25s;
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .cart-trigger {
+      order: 3;
+      border: 2px solid var(--red);
+      background: #fff;
+      color: var(--red);
+      min-height: 45px;
+      padding: 0 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+      min-width: 23px;
+      height: 23px;
+      margin-left: 5px;
+      padding: 0 5px;
+      color: #fff;
+      background: var(--red);
+      border-radius: 99px;
+      font-size: .68rem;
+    }
+
+    .menu-btn {
+      order: 4;
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 710px;
+      position: relative;
+      display: grid;
+      align-items: center;
+      background: linear-gradient(
+        112deg,
+        #ffffff 0%,
+        #ffffff 54%,
+        #ed1c24 54%,
+        #c70f16 100%
+      );
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 590px;
+      height: 590px;
+      right: -110px;
+      top: -120px;
+      border: 90px solid rgba(255, 255, 255, .11);
+      border-radius: 50%;
+      animation: pulseRing 4s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -120px;
+      bottom: -170px;
+      width: 390px;
+      height: 390px;
+      border: 60px solid rgba(237, 28, 36, .055);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 65px;
+      padding: 70px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo-slot {
+      width: min(420px, 100%);
+      min-height: 112px;
+      margin-bottom: 25px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo-slot img {
+      width: 100%;
+      max-height: 145px;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: var(--red);
+      text-align: center;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .logo-placeholder small {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: .64rem;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .presentation-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      color: #fff;
+      background: var(--ink);
+      font-size: .67rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.6rem, 7vw, 6.6rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: .86;
+      letter-spacing: -.075em;
+      margin: 20px 0 26px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 590px;
+      font-size: 1.03rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn-primary {
+      padding: 16px 25px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 23px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .hero-notes {
+      display: flex;
+      gap: 30px;
+      margin-top: 37px;
+      color: #555;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .hero-notes span::before {
+      content: "✓";
+      color: var(--red);
+      margin-right: 8px;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 500px;
+    }
+
+    .red-panel {
+      position: absolute;
+      inset: 25px 15px 15px 70px;
+      background: rgba(115, 0, 5, .2);
+      border: 2px solid rgba(255, 255, 255, .65);
+      border-radius: 22px 4px 22px 4px;
+      box-shadow: 0 25px 60px rgba(80, 0, 5, .35);
+      transform: rotate(3deg);
+    }
+
+    .firework {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-45%, -50%);
+    }
+
+    .ray {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 46%;
+      height: 3px;
+      transform-origin: left center;
+      background: linear-gradient(90deg, #fff, transparent);
+      animation: rayGlow 2.2s ease-in-out infinite alternate;
+    }
+
+    .ray::after {
+      content: "";
+      position: absolute;
+      right: 25%;
+      top: -3px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 16px #fff;
+    }
+
+    .spark-core {
+      position: absolute;
+      inset: 45%;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 40px 15px rgba(255, 255, 255, .55);
+    }
+
+    .visual-card {
+      position: absolute;
+      left: 15px;
+      bottom: 35px;
+      width: 210px;
+      padding: 22px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--ink);
+      transform: rotate(-3deg);
+    }
+
+    .visual-card strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .visual-card small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .features {
+      border-block: 1px solid var(--line);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .feature {
+      padding: 28px 25px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .feature:last-child {
+      border: 0;
+    }
+
+    .feature-icon {
+      color: var(--red);
+      font-size: 1.45rem;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: .86rem;
+    }
+
+    .feature small {
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .products {
+      padding: 110px 0;
+      background: #ffffff;
+    }
+
+    .products-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .catalog-tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: -12px 0 30px;
+    }
+
+    .search-box {
+      width: min(430px, 100%);
+      position: relative;
+    }
+
+    .search-box input {
+      padding: 14px 18px 14px 44px;
+      border: 2px solid #e3e3e3;
+      border-radius: 4px;
+    }
+
+    .search-box span {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--red);
+    }
+
+    .result-count {
+      white-space: nowrap;
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid #e8e8e8;
+      background: #ffffff;
+      padding: 10px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-size: .78rem;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #fff;
+      background: var(--red);
+      border-color: var(--red);
+      box-shadow: var(--neon-glow);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      border: 1px solid #eeeeee;
+      background: #ffffff;
+      transition: .3s;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-9px) rotate(-.5deg);
+      box-shadow: 0 24px 50px rgba(130, 0, 7, .2);
+      border-color: var(--red);
+    }
+
+    .product-art {
+      height: 278px;
+      padding: 25px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background: linear-gradient(140deg, #fff0f0, #ffffff);
+      overflow: hidden;
+    }
+
+    .product-art::before {
+      content: "";
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(225, 6, 0, .2);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .product-art .symbol {
+      font-size: 5rem;
+      filter: drop-shadow(0 14px 13px rgba(110, 0, 0, .16));
+      z-index: 1;
+    }
+
+    .tag {
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      background: var(--red);
+      color: #fff;
+      padding: 7px 12px;
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-category {
+      color: var(--red);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      font-size: 1.18rem;
+      margin: 6px 0;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: .82rem;
+      min-height: 48px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .price {
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .add-cart {
+      border: 0;
+      background: var(--red);
+      color: #fff;
+      min-height: 42px;
+      padding: 0 13px;
+      cursor: pointer;
+      font-size: .75rem;
+      font-weight: 900;
+      transition: .2s;
+    }
+
+    .add-cart:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .safety {
+      padding: 105px 0;
+      background: linear-gradient(135deg, #ed1c24, #c70f16);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .safety::after {
+      content: "SEGURIDAD";
+      position: absolute;
+      right: -20px;
+      bottom: -60px;
+      font-size: 9rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .055);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .safety .eyebrow {
+      color: #fff;
+    }
+
+    .safety .eyebrow::before {
+      background: #fff;
+    }
+
+    .safety .section-copy {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .safety-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .safety-item {
+      padding: 22px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .2);
+      backdrop-filter: blur(5px);
+    }
+
+    .safety-item span {
+      font-size: 1.4rem;
+    }
+
+    .safety-item strong {
+      display: block;
+      margin: 8px 0 3px;
+    }
+
+    .safety-item small {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .contact {
+      padding: 105px 0;
+      background: #fff0f0;
+    }
+
+    .contact-box {
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+    }
+
+    .contact-info {
+      padding: 48px;
+      background: #171717;
+      color: #fff;
+    }
+
+    .contact-info h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: #aaa;
+      font-size: .88rem;
+    }
+
+    .contact-detail {
+      margin-top: 35px;
+      display: grid;
+      gap: 21px;
+    }
+
+    .contact-detail div {
+      display: flex;
+      gap: 14px;
+    }
+
+    .contact-detail span {
+      color: #ff3b36;
+    }
+
+    form {
+      padding: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #dddddd;
+      padding: 13px 14px;
+      outline: 0;
+      background: #ffffff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(237, 28, 36, .12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    form .btn-primary {
+      justify-self: start;
+    }
+
+    footer {
+      background: #0e0e0e;
+      color: #fff;
+      padding: 35px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    footer p {
+      color: #888;
+      font-size: .72rem;
+      max-width: 700px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 100;
+      background: #171717;
+      color: #fff;
+      padding: 15px 20px;
+      border-left: 4px solid var(--red);
+      box-shadow: var(--shadow);
+      transform: translateY(140%);
+      opacity: 0;
+      transition: .35s;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 110;
+      background: rgba(0, 0, 0, .55);
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 120;
+      width: min(430px, 100%);
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: -20px 0 55px rgba(0, 0, 0, .25);
+      transform: translateX(105%);
+      transition: .35s ease;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px;
+      color: #fff;
+      background: var(--red);
+    }
+
+    .cart-head h2 {
+      font-size: 1.35rem;
+    }
+
+    .cart-close {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, .6);
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.65rem;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+    }
+
+    .empty-cart {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .empty-cart span {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 62px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item-icon {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      background: var(--red-soft);
+      font-size: 1.8rem;
+    }
+
+    .cart-item h3 {
+      font-size: .86rem;
+      line-height: 1.3;
+    }
+
+    .cart-item-price {
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 900;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .quantity button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .quantity span {
+      min-width: 32px;
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .remove-item {
+      border: 0;
+      background: transparent;
+      color: #999;
+      cursor: pointer;
+      font-size: 1.15rem;
+    }
+
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      background: #fafafa;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .checkout {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      color: #fff;
+      background: #20a83e;
+      cursor: pointer;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(32, 168, 62, .22);
+    }
+
+    .checkout:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }    .ticker {
+      overflow: hidden;
+      background: #111;
+      color: #fff;
+      border-block: 3px solid var(--red);
+    }
+
+    .ticker-track {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      padding: 12px 0;
+      animation: tickerMove 22s linear infinite;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .ticker-track span::after {
+      content: "✦";
+      color: var(--red);
+      margin-left: 34px;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      width: 0;
+      height: 4px;
+      background: var(--red);
+      box-shadow: 0 0 12px rgba(237, 28, 36, .65);
+      pointer-events: none;
+    }
+
+    .neon-frame {
+      position: fixed;
+      z-index: 190;
+      pointer-events: none;
+      opacity: .92;
+      filter: saturate(1.35) brightness(1.08);
+    }
+
+    .neon-frame.top,
+    .neon-frame.bottom {
+      right: 0;
+      left: 0;
+      height: 12px;
+      background: linear-gradient(
+        90deg,
+        #e9002f,
+        #ff5a00,
+        #ff123f,
+        #ff7a00,
+        #e9002f
+      );
+      background-size: 240% 100%;
+      animation:
+        neonFlow 3.6s linear infinite,
+        flameFlicker 1.4s ease-in-out infinite alternate;
+      box-shadow:
+        0 0 9px #ff2b43,
+        0 0 20px rgba(255, 0, 60, .65),
+        0 0 38px rgba(255, 0, 43, .35);
+    }
+
+    .neon-frame.top {
+      top: 0;
+    }
+
+    .neon-frame.bottom {
+      bottom: 0;
+    }
+
+    .neon-frame.left,
+    .neon-frame.right {
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      background: linear-gradient(
+        180deg,
+        #e9002f,
+        #ff5a00,
+        #ff123f,
+        #ff7a00,
+        #e9002f
+      );
+      background-size: 100% 240%;
+      animation:
+        neonFlowVertical 3.6s linear infinite,
+        flameFlicker 1.4s ease-in-out infinite alternate;
+      box-shadow:
+        0 0 9px #ff2b43,
+        0 0 20px rgba(255, 0, 60, .65),
+        0 0 38px rgba(255, 0, 43, .35);
+    }
+
+    .neon-frame.left {
+      left: 0;
+    }
+
+    .neon-frame.right {
+      right: 0;
+    }
+
+    .neon-corner {
+      position: fixed;
+      z-index: 191;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        #ffb000 0 10%,
+        #ff4d00 28%,
+        #ff003c 50%,
+        transparent 74%
+      );
+      filter: blur(.5px) saturate(1.3);
+      animation: cornerPulse 2.2s ease-in-out infinite alternate;
+    }
+
+    .neon-corner.tl {
+      top: -10px;
+      left: -10px;
+    }
+
+    .neon-corner.tr {
+      top: -10px;
+      right: -10px;
+    }
+
+    .neon-corner.bl {
+      bottom: -10px;
+      left: -10px;
+    }
+
+    .neon-corner.br {
+      right: -10px;
+      bottom: -10px;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    @keyframes neonFlow {
+      to {
+        background-position: -240% 0;
+      }
+    }
+
+    @keyframes neonFlowVertical {
+      to {
+        background-position: 0 -240%;
+      }
+    }
+
+    @keyframes flameFlicker {
+      from {
+        opacity: .82;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes cornerPulse {
+      to {
+        transform: scale(1.2);
+        opacity: .85;
+      }
+    }
+
+    @keyframes tickerMove {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes pulseRing {
+      50% {
+        transform: scale(1.08);
+        opacity: .62;
+      }
+    }
+
+    @keyframes rayGlow {
+      from {
+        opacity: .35;
+      }
+
+      to {
+        opacity: 1;
+        filter: drop-shadow(0 0 7px #fff);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .neon-frame,
+      .neon-corner {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 25px;
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-grid,
+      .safety-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        height: 390px;
+      }
+
+      .red-panel {
+        inset: 10px 20px 10px 60px;
+      }
+
+      .firework {
+        width: 280px;
+        height: 280px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products-head {
+        display: grid;
+      }
+
+      .catalog-tools {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .contact-info {
+        padding: 35px 25px;
+      }
+
+      form {
+        padding: 35px 25px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding-bottom: 142px;
+      }
+
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      header nav {
+        height: 67px;
+      }
+
+      .logo {
+        font-size: .98rem;
+      }
+
+      .logo-mark {
+        width: 37px;
+        height: 37px;
+      }
+
+      .cart-trigger {
+        min-height: 41px;
+        padding: 0 10px;
+        font-size: .75rem;
+      }
+
+      .menu-btn {
+        font-size: 1.35rem;
+      }
+
+      .nav-links {
+        top: 67px;
+      }
+
+      .hero {
+        min-height: auto;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #ffffff 68%,
+          #ed1c24 68%,
+          #c70f16 100%
+        );
+      }
+
+      .hero-grid {
+        gap: 24px;
+        padding: 35px 0 26px;
+      }
+
+      .hero-logo-slot {
+        min-height: 88px;
+        margin-bottom: 18px;
+      }
+
+      .hero-logo-slot img {
+        max-height: 115px;
+      }
+
+      .presentation-label {
+        font-size: .59rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 16vw, 4.2rem);
+        margin: 17px 0 20px;
+      }
+
+      .hero p {
+        font-size: .92rem;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 25px;
+      }
+
+      .hero-actions a {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-notes {
+        display: grid;
+        gap: 7px;
+        margin-top: 24px;
+      }
+
+      .hero-visual {
+        height: 300px;
+      }
+
+      .red-panel {
+        inset: 0 8px 8px 38px;
+      }
+
+      .firework {
+        width: 225px;
+        height: 225px;
+      }
+
+      .visual-card {
+        left: 0;
+        bottom: 17px;
+        width: 175px;
+        padding: 16px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        padding: 17px 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .products,
+      .safety,
+      .contact {
+        padding: 64px 0;
+      }
+
+      .section-title {
+        font-size: 2.15rem;
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+      }
+
+      .filter-btn {
+        min-height: 46px;
+        padding: 8px;
+      }
+
+      .filter-btn:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .product-art {
+        height: 258px;
+      }
+
+      .product-info {
+        padding: 19px;
+      }
+
+      .product-meta {
+        gap: 12px;
+      }
+
+      .add-cart {
+        min-height: 46px;
+        flex: 1;
+      }
+
+      .safety-grid {
+        gap: 35px;
+      }
+
+      .safety-list {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+        padding: 30px 22px;
+      }
+
+      .field {
+        grid-column: 1 / -1;
+      }
+
+      .contact-info {
+        padding: 35px 25px;
+      }
+
+      .cart-drawer {
+        width: 100%;
+      }
+
+      .cart-head {
+        padding-top: max(18px, env(safe-area-inset-top));
+      }
+
+      .cart-footer {
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+      }
+
+      .mobile-cta {
+        display: flex;
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: calc(75px + env(safe-area-inset-bottom));
+        z-index: 89;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background: var(--red);
+        border-radius: 5px;
+        font-weight: 900;
+        box-shadow: 0 12px 28px rgba(120, 0, 6, .32);
+      }
+
+      .toast {
+        right: 14px;
+        left: 14px;
+        bottom: 145px;
+        text-align: center;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 90;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        min-height: calc(68px + env(safe-area-inset-bottom));
+        padding: 6px 5px env(safe-area-inset-bottom);
+        background: rgba(255, 255, 255, .98);
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, .11);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-nav a,
+      .mobile-nav button {
+        position: relative;
+        display: grid;
+        place-items: center;
+        align-content: center;
+        gap: 1px;
+        min-width: 0;
+        min-height: 56px;
+        padding: 3px 1px;
+        border: 0;
+        color: #666;
+        background: transparent;
+        font-size: .56rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .mobile-nav a.active {
+        color: var(--red);
+      }
+
+      .mobile-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      .mobile-cart-count {
+        position: absolute;
+        top: 1px;
+        left: 55%;
+        display: grid;
+        place-items: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        border: 2px solid #fff;
+        border-radius: 99px;
+        color: #fff;
+        background: var(--red);
+        font-size: .55rem;
+      }
+
+      .neon-frame.top,
+      .neon-frame.bottom {
+        height: 7px;
+      }
+
+      .neon-frame.left,
+      .neon-frame.right {
+        width: 7px;
+      }
+
+      .neon-corner {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @media (min-width: 621px) {
+      body {
+        padding-bottom: 78px;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 90;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        min-height: 68px;
+        padding: 6px max(18px, calc((100% - 820px) / 2));
+        background: rgba(255, 255, 255, .98);
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, .11);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-nav a,
+      .mobile-nav button {
+        position: relative;
+        display: grid;
+        place-items: center;
+        align-content: center;
+        gap: 1px;
+        min-height: 56px;
+        border: 0;
+        color: #666;
+        background: transparent;
+        font-size: .62rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .mobile-nav a.active {
+        color: var(--red);
+      }
+
+      .mobile-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      .mobile-cart-count {
+        position: absolute;
+        top: 1px;
+        left: 53%;
+        display: grid;
+        place-items: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        border: 2px solid #fff;
+        border-radius: 99px;
+        color: #fff;
+        background: var(--red);
+        font-size: .55rem;
+      }
+    }
+    /* Identidad FeliX: nocturna, eléctrica y contemporánea */
+    :root{--red:#ff4d1c;--red-dark:#d62e0a;--red-soft:#151326;--white:#f7f4ff;--ink:#080712;--muted:#aaa5bd;--line:#29243e;--cyan:#28e7ff;--violet:#7a2cff;--pink:#ff2ba6;--shadow:0 22px 60px rgba(0,0,0,.42);--neon-glow:0 0 28px rgba(40,231,255,.32)}
+    body{background:#080712;color:#f7f4ff}.container{width:min(1220px,calc(100% - 40px))}.eyebrow{color:var(--cyan)}.eyebrow::before{background:var(--pink)}.section-title span{color:var(--cyan)}.section-copy{color:var(--muted)}
+    header{background:rgba(8,7,18,.88);border-bottom:1px solid rgba(40,231,255,.25)}.logo b{color:var(--cyan)}.logo-mark{background:linear-gradient(145deg,var(--pink),var(--violet));border-radius:6px;box-shadow:0 0 22px rgba(255,43,166,.55)}.nav-links a:not(.nav-cta)::after{background:var(--cyan)}.nav-cta,.btn-primary{background:linear-gradient(90deg,var(--violet),var(--pink));box-shadow:0 0 25px rgba(122,44,255,.4)}.nav-cta:hover,.btn-primary:hover{background:linear-gradient(90deg,var(--pink),var(--red))}.cart-trigger{border-color:var(--cyan);background:#0f0d1d;color:var(--cyan)}.cart-count{background:var(--pink)}
+    .ticker{background:linear-gradient(90deg,var(--violet),var(--pink),var(--red));color:white}.hero{background:radial-gradient(circle at 78% 45%,rgba(122,44,255,.45),transparent 28%),radial-gradient(circle at 18% 20%,rgba(40,231,255,.13),transparent 30%),#080712}.hero h1 span{color:var(--cyan);text-shadow:0 0 28px rgba(40,231,255,.45)}.hero p,.hero-notes{color:var(--muted)}.hero::before{border-color:rgba(40,231,255,.09)}.red-panel{background:linear-gradient(145deg,rgba(122,44,255,.65),rgba(255,43,166,.38));border-color:rgba(40,231,255,.6);box-shadow:0 25px 70px rgba(122,44,255,.35)}.ray{background:linear-gradient(90deg,var(--cyan),transparent)}.ray::after,.spark-core{background:white;box-shadow:0 0 24px var(--cyan)}.visual-card{background:#0f0d1d;color:white;border-color:var(--cyan);box-shadow:10px 10px 0 var(--pink)}.visual-card strong{color:var(--cyan)}.presentation-label{background:var(--pink)}
+    .features{background:#0d0b18;border-color:var(--line)}.feature{border-color:var(--line)}.feature-icon{color:var(--cyan)}.products{background:#0a0914}.catalog-tools input{background:#111020;color:white;border-color:#2f2947}.filter-btn{background:#111020;color:#dcd8eb;border-color:#302a48}.filter-btn.active,.filter-btn:hover{background:var(--violet);border-color:var(--cyan)}.product-card{background:#111020;border-color:#2d2843}.product-card:hover{border-color:var(--cyan);box-shadow:0 24px 55px rgba(40,231,255,.18)}.product-art{background:linear-gradient(145deg,#17142a,#262048)}.product-art::before{border-color:rgba(40,231,255,.25)}.tag,.add-cart{background:linear-gradient(90deg,var(--violet),var(--pink))}.product-category{color:var(--cyan)}.product-info p{color:var(--muted)}.product-meta{border-color:var(--line)}
+    .safety{background:linear-gradient(135deg,#531dc0,#b91479)}.contact{background:radial-gradient(circle at 80% 30%,rgba(255,43,166,.18),transparent 30%),#0b0916}.contact-box{background:#111020;border:1px solid #302a48}.contact-info{background:linear-gradient(145deg,#121029,#29155c)}input,textarea{background:#0b0917;color:white;border-color:#38304f}footer{background:#05040c;border-top:1px solid #252039}.toast{background:var(--cyan);color:#080712;border-color:var(--pink)}.cart-drawer{background:#111020;color:white}.cart-items{color:white}.cart-head{background:linear-gradient(90deg,var(--violet),var(--pink))}.neon-frame{background:linear-gradient(90deg,var(--cyan),var(--pink),var(--red))!important;box-shadow:0 0 20px rgba(40,231,255,.55)}
+    .brand-x{color:var(--pink);font-style:normal}.hero-logo-slot{border:1px solid rgba(40,231,255,.35);background:rgba(16,13,34,.75);box-shadow:12px 12px 0 rgba(255,43,166,.55)}.logo-placeholder{position:relative;color:white;font-size:clamp(2.5rem,7vw,5.6rem);font-weight:900;letter-spacing:-.08em}.logo-placeholder b{color:var(--cyan)}.logo-placeholder i{color:var(--pink);font-style:normal}.logo-placeholder small{color:#aaa5bd;letter-spacing:.16em}
+    /* Dirección final: negro absoluto + energía azul neón */
+    :root{--red:#087cff;--red-dark:#0050c9;--red-soft:#07111f;--white:#f7fbff;--ink:#030509;--muted:#83a4c8;--line:#102b49;--cyan:#18cfff;--violet:#075cff;--pink:#00a8ff;--shadow:0 22px 60px rgba(0,46,120,.28);--neon-glow:0 0 30px rgba(24,207,255,.48)}
+    body{background:#020408;color:#f7fbff}#sonicSky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;background:radial-gradient(circle at 75% 20%,rgba(0,92,255,.14),transparent 28%),#020408}header,main,footer,.ticker,.mobile-nav,.cart-overlay,.cart-drawer,.toast{position:relative;z-index:2}
+    header{position:sticky;background:rgba(2,4,8,.9);border-bottom:1px solid rgba(24,207,255,.45);box-shadow:0 8px 32px rgba(0,86,255,.15)}.logo b,.brand-x{color:#18cfff}.logo-mark{background:#075cff;box-shadow:0 0 28px #18cfff}.nav-cta,.btn-primary{background:linear-gradient(90deg,#075cff,#18cfff);color:white;box-shadow:0 0 26px rgba(24,207,255,.38)}.nav-cta:hover,.btn-primary:hover{background:#18cfff;color:#020408}.cart-trigger{border-color:#18cfff;background:#05101c;color:#18cfff}.cart-count{background:#075cff}.nav-links a:not(.nav-cta)::after{background:#18cfff}
+    .ticker{background:#075cff;border-block:2px solid #18cfff;box-shadow:0 0 30px rgba(24,207,255,.4)}.hero{background:linear-gradient(105deg,rgba(2,4,8,.97) 0 58%,rgba(0,53,151,.64) 100%)}.hero h1 span{color:#18cfff;text-shadow:0 0 20px #075cff,0 0 42px rgba(24,207,255,.58)}.hero::before{border-color:rgba(24,207,255,.18)}.hero::after{border-color:rgba(7,92,255,.22)}.hero-logo-slot{background:rgba(3,12,25,.8);border:2px solid #18cfff;box-shadow:12px 12px 0 #075cff,0 0 40px rgba(24,207,255,.22)}.logo-placeholder i,.logo-placeholder b{color:#18cfff}.presentation-label{background:#075cff}.red-panel{background:linear-gradient(145deg,rgba(7,92,255,.68),rgba(0,31,82,.75));border-color:#18cfff;box-shadow:0 0 55px rgba(24,207,255,.32)}.ray{background:linear-gradient(90deg,#f7fbff,#18cfff,transparent)}.spark-core{box-shadow:0 0 38px 18px #18cfff}.visual-card{background:#04101f;border-color:#18cfff;box-shadow:9px 9px 0 #075cff}.visual-card strong{color:#18cfff}
+    .features{background:rgba(3,8,15,.96);border-color:#102b49}.products{background:rgba(2,5,10,.94)}.product-card{background:#06101c;border-color:#12304e}.product-card:hover{border-color:#18cfff;box-shadow:0 22px 55px rgba(24,207,255,.22)}.product-art{background:linear-gradient(145deg,#061426,#092f64)}.product-art::before{border-color:rgba(24,207,255,.35)}.tag,.add-cart{background:linear-gradient(90deg,#075cff,#18cfff)}.filter-btn.active,.filter-btn:hover{background:#075cff;border-color:#18cfff}.product-category,.feature-icon,.section-title span,.eyebrow{color:#18cfff}.safety{background:linear-gradient(135deg,#04142a,#075cff);border-block:2px solid #18cfff}.contact{background:rgba(2,5,10,.96)}.contact-info{background:linear-gradient(145deg,#031020,#07326e)}.contact-box{border-color:#123a60}footer{background:#010307;border-top:2px solid #18cfff}.neon-frame{background:#18cfff!important;box-shadow:0 0 22px #18cfff!important}.toast{background:#18cfff;color:#020408}
+    /* Sobrecarga de azul neón y protagonista del hero */
+    body{background:#00030a}.hero{background:radial-gradient(circle at 76% 44%,rgba(0,117,255,.52),transparent 28%),radial-gradient(circle at 18% 18%,rgba(24,207,255,.18),transparent 26%),#00030a}.hero h1{filter:drop-shadow(0 0 12px rgba(24,207,255,.25))}.hero h1 span{color:#4eeaff;text-shadow:0 0 12px #009dff,0 0 28px #0075ff,0 0 65px rgba(24,207,255,.8)}.hero-logo-slot{border-color:#4eeaff;box-shadow:0 0 28px rgba(24,207,255,.65),12px 12px 0 #075cff}.btn-primary,.nav-cta{box-shadow:0 0 14px #009dff,0 0 38px rgba(24,207,255,.55)}.product-card{box-shadow:inset 0 0 22px rgba(0,117,255,.08)}.product-card:hover{box-shadow:0 0 16px #009dff,0 0 42px rgba(24,207,255,.32)}.product-art{background:radial-gradient(circle,#0b4b95,#03101f 70%)}.section-title span{color:#4eeaff;text-shadow:0 0 20px rgba(24,207,255,.62)}.safety{box-shadow:inset 0 0 90px rgba(24,207,255,.25)}.sonic-art{position:absolute;inset:-35px -55px 5px 5px;width:calc(100% + 70px);height:calc(100% + 40px);object-fit:contain;z-index:4;filter:drop-shadow(0 0 18px #00a8ff) drop-shadow(0 0 42px rgba(24,207,255,.72));animation:sonicFloat 3.2s ease-in-out infinite}.hero-visual .firework{opacity:.7;z-index:1}.hero-visual .red-panel{opacity:.48}.hero-visual .visual-card{z-index:6}@keyframes sonicFloat{50%{transform:translateY(-14px) rotate(-1deg)}}@media(max-width:820px){.sonic-art{inset:-10px -10px 0;width:calc(100% + 20px);height:100%}}
+    /* Navegación y carrito mobile-first */
+    .cart-head{background:#04142a;border-bottom:1px solid rgba(24,207,255,.35);padding:24px}.cart-title-wrap{display:grid;gap:4px}.cart-kicker{color:#83cfff;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.cart-close{border-radius:50%;border-color:#18cfff;color:#18cfff}.cart-items{background:#020812}.cart-item{grid-template-columns:54px 1fr auto;padding:16px 0;border-color:#12304e}.cart-item-icon{width:54px;height:54px;border-radius:15px;background:linear-gradient(145deg,#06327a,#071628);border:1px solid #18cfff;box-shadow:0 0 16px rgba(24,207,255,.18)}.cart-item h3{color:white}.cart-item-price{color:#83cfff}.quantity{background:#071426;border:1px solid #123a60;border-radius:999px;width:max-content;padding:3px}.quantity button{border:0;border-radius:50%;background:#075cff;color:white}.remove-item{color:#83a4c8}.cart-footer{background:#040b16;border-top:1px solid #123a60;padding:20px 22px}.cart-total{font-size:1rem}.cart-total span:last-child{color:#4eeaff;font-size:1.35rem;text-shadow:0 0 14px rgba(24,207,255,.5)}.checkout{min-height:56px;border-radius:14px;background:linear-gradient(90deg,#075cff,#18cfff);color:#fff;font-size:.9rem;box-shadow:0 0 24px rgba(24,207,255,.28)}.checkout:disabled{background:#172438;color:#607a99;box-shadow:none}.checkout-note{text-align:center;color:#6f8caa;font-size:.66rem;margin-top:10px}
+    @media(min-width:901px){.mobile-nav{display:none!important}.mobile-cta{display:none!important}.cart-drawer{position:fixed;z-index:120}}
+    @media(max-width:900px){body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}header nav .nav-links,header .cart-trigger{display:none}.mobile-cta{display:none!important}.mobile-nav{position:fixed!important;left:12px!important;right:12px!important;bottom:max(10px,env(safe-area-inset-bottom))!important;z-index:100!important;display:grid!important;grid-template-columns:repeat(5,1fr);min-height:70px;padding:7px;background:rgba(3,10,21,.92)!important;border:1px solid rgba(24,207,255,.35)!important;border-radius:22px;box-shadow:0 0 30px rgba(0,103,255,.25),0 12px 38px rgba(0,0,0,.48)!important;backdrop-filter:blur(18px)}.mobile-nav a,.mobile-nav button{position:relative;display:grid;place-items:center;align-content:center;gap:4px;min-width:0;min-height:56px;padding:4px 2px;border:0;border-radius:15px;color:#7692af!important;background:transparent;font-size:.55rem;font-weight:800}.mobile-nav a.active{color:#fff!important;background:linear-gradient(145deg,#075cff,#008fd5);box-shadow:0 0 18px rgba(24,207,255,.34)}.mobile-nav button{color:#4eeaff!important}.mobile-icon{font-size:1.22rem}.mobile-cart-count{top:2px;left:58%;border-color:#020812;background:#18cfff;color:#020812}.cart-overlay{position:fixed;z-index:110}.cart-drawer{position:fixed;top:auto;bottom:0;left:0;right:0;width:100%;height:min(84dvh,760px);z-index:120;border-radius:26px 26px 0 0;border-top:1px solid #18cfff;box-shadow:0 -18px 65px rgba(0,73,180,.32);transform:translateY(105%)}.cart-drawer.open{transform:translateY(0)}.cart-head{padding:18px 20px}.cart-head::before{content:"";position:absolute;top:8px;left:50%;width:44px;height:4px;transform:translateX(-50%);border-radius:99px;background:#31547a}.cart-items{padding:8px 18px}.cart-footer{padding:15px 18px max(18px,env(safe-area-inset-bottom))}.hero-grid{padding-top:45px}.hero-logo-slot{margin-top:10px}}
+    @media(max-width:420px){.mobile-nav{left:8px!important;right:8px!important}.mobile-nav a,.mobile-nav button{font-size:.5rem}.mobile-icon{font-size:1.08rem}.cart-item{grid-template-columns:48px 1fr auto}.cart-item-icon{width:48px;height:48px}.cart-item h3{font-size:.86rem}}
+    /* Espacios listos para el logo del negocio */
+    .brand-logo-slot{position:relative;display:block;min-width:190px;width:190px;height:76px;overflow:hidden;border:1px solid rgba(24,207,255,.65);background:#000;box-shadow:0 0 18px rgba(24,207,255,.24)}.brand-logo-slot img{position:absolute;z-index:2;width:100%;height:auto;left:0;top:-200%;object-fit:initial}.brand-logo-fallback{color:#4eeaff;font-size:.62rem;font-weight:900;letter-spacing:.12em;text-align:center;text-transform:uppercase}.footer-logo-slot{position:relative;display:block;width:270px;height:108px;overflow:hidden;border:1px solid rgba(24,207,255,.5);background:#000;box-shadow:0 0 28px rgba(24,207,255,.2)}.footer-logo-slot img{position:absolute;z-index:2;width:100%;height:auto;left:0;top:-200%;max-width:none;max-height:none;object-fit:initial}.footer-logo-slot .brand-logo-fallback{font-size:.58rem}.logo-mark{display:none}
+    @media(max-width:900px){header nav{height:74px}.brand-logo-slot{min-width:150px;width:150px;height:60px}.menu-btn{display:block;color:#4eeaff}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;padding:54px 0 35px;gap:20px}.hero h1{font-size:clamp(3rem,15vw,5.2rem);margin:16px 0 20px}.hero p{font-size:.95rem}.hero-visual{height:min(105vw,480px)}.hero-actions>*{flex:1;min-width:145px}.products{padding:72px 0}.products-head{display:block}.catalog-tools{align-items:stretch;flex-direction:column}.search-box{width:100%}.product-grid{grid-template-columns:repeat(2,1fr);gap:14px}.product-art{height:190px}.product-info{padding:18px}.footer-row{align-items:flex-start;flex-direction:column}.footer-logo-slot{width:230px;height:92px}}
+    .hero-full-logo{position:relative;width:min(350px,82%);aspect-ratio:1/1;margin:0 auto 32px;padding:5px;overflow:hidden;background:#000;isolation:isolate;box-shadow:0 0 20px rgba(24,207,255,.55),0 0 58px rgba(0,92,255,.34)}.hero-full-logo img{position:absolute;z-index:2;width:calc(100% - 10px);height:calc(178% - 18px);left:5px;top:calc(-39% + 5px);object-fit:cover}.hero-full-logo::before{content:"";position:absolute;z-index:0;inset:-55%;background:conic-gradient(from 0deg,transparent 0 18%,#18cfff 22%,#fff 24%,#075cff 27%,transparent 32% 58%,#18cfff 62%,#fff 64%,#075cff 67%,transparent 72%);animation:electricFrame 3s linear infinite}.hero-full-logo::after{content:"✦";position:absolute;z-index:3;inset:0;display:flex;align-items:flex-start;justify-content:flex-end;padding:9px;color:white;font-size:1.2rem;pointer-events:none;border:2px solid rgba(140,240,255,.9);box-shadow:inset 0 0 28px rgba(24,207,255,.35),inset 0 0 0 5px rgba(0,8,20,.8);text-shadow:0 0 8px white,0 0 18px #18cfff;animation:cornerSpark 1.4s ease-in-out infinite alternate}@keyframes electricFrame{to{transform:rotate(360deg)}}@keyframes cornerSpark{to{opacity:.45;text-shadow:0 0 3px white,0 0 8px #18cfff}}@media(prefers-reduced-motion:reduce){.hero-full-logo::before,.hero-full-logo::after{animation:none}}
+    @media(max-width:560px){.container{width:min(100% - 28px,1160px)}.brand-logo-slot{min-width:132px;width:132px;height:53px}.hero-grid{padding-top:34px}.hero-full-logo{width:min(270px,82%);margin-inline:auto;margin-bottom:25px}.hero h1{font-size:14vw;line-height:.9;letter-spacing:-.065em}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions>*{width:100%;justify-content:center}.hero-notes{display:grid;gap:8px}.hero-visual{height:390px}.sonic-art{inset:0;width:100%;height:100%}.visual-card{width:168px;padding:16px}.feature-grid{grid-template-columns:1fr 1fr}.feature{padding:19px 12px}.product-grid{grid-template-columns:1fr}.product-art{height:220px}.product-info h3{font-size:1.05rem}.safety-list{grid-template-columns:1fr}.contact-box{display:block}.footer-logo-slot{width:210px;height:84px}footer{padding-bottom:105px}}
+    /* Franja superior y marco eléctrico de página */
+    .top-energy-bar{position:relative;z-index:48;min-height:38px;display:flex;align-items:center;justify-content:center;gap:22px;padding:8px 20px;color:#dffaff;background:linear-gradient(90deg,#001333,#075cff,#00275f);border-bottom:1px solid #18cfff;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 0 24px rgba(24,207,255,.4)}.top-energy-bar span{display:inline-flex;align-items:center;gap:7px}.top-energy-bar b{color:#4eeaff}.top-energy-bar a{padding:4px 10px;border:1px solid rgba(255,255,255,.42);border-radius:99px;transition:.2s}.top-energy-bar a:hover{background:#18cfff;color:#020408}.energy-live{width:7px;height:7px;border-radius:50%;background:#4eeaff;box-shadow:0 0 10px #18cfff;animation:livePulse 1s ease-in-out infinite alternate}@keyframes livePulse{to{opacity:.35;transform:scale(.7)}}
+    .neon-frame{z-index:140!important;opacity:1!important}.neon-frame.top,.neon-frame.bottom{height:5px!important;background:linear-gradient(90deg,#075cff,#18cfff,#fff,#18cfff,#075cff)!important;background-size:220% 100%!important;animation:frameFlow 3s linear infinite!important;box-shadow:0 0 10px #18cfff,0 0 24px rgba(0,117,255,.8)!important}.neon-frame.left,.neon-frame.right{width:5px!important;background:linear-gradient(180deg,#075cff,#18cfff,#fff,#18cfff,#075cff)!important;background-size:100% 220%!important;animation:frameFlowY 3s linear infinite!important;box-shadow:0 0 10px #18cfff,0 0 24px rgba(0,117,255,.8)!important}.neon-corner{z-index:141!important;width:38px!important;height:38px!important;border-color:#7cefff!important;filter:drop-shadow(0 0 7px #18cfff);animation:cornerCharge 1.3s ease-in-out infinite alternate}@keyframes frameFlow{to{background-position:220% 0}}@keyframes frameFlowY{to{background-position:0 220%}}@keyframes cornerCharge{to{filter:drop-shadow(0 0 14px #18cfff);transform:scale(.88)}}@media(prefers-reduced-motion:reduce){.top-energy-bar .energy-live,.neon-frame,.neon-corner{animation:none!important}}
+    @media(max-width:620px){.top-energy-bar{min-height:34px;justify-content:space-between;gap:6px;padding:6px 12px;font-size:.55rem;letter-spacing:.05em}.top-energy-bar .hide-phone{display:none}.top-energy-bar a{padding:4px 7px}.neon-corner{width:25px!important;height:25px!important}}
+    .header-fill{display:flex;align-items:center;gap:10px;margin-right:auto;margin-left:16px;padding-left:16px;border-left:1px solid rgba(24,207,255,.35)}.header-fill strong{color:#4eeaff;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.header-fill small{color:#7898b9;font-size:.61rem}.header-phone{padding:6px 10px;border:1px solid rgba(24,207,255,.3);border-radius:99px;color:#dffaff;font-size:.62rem;font-weight:800}.frame-sonic{position:fixed;z-index:145;width:78px;height:52px;object-fit:cover;pointer-events:none;mix-blend-mode:screen;filter:drop-shadow(0 0 8px #18cfff) drop-shadow(0 0 18px #075cff);animation:sonicLap 14s linear infinite}@keyframes sonicLap{0%{left:5px;top:5px;transform:rotate(0deg)}24%{left:calc(100vw - 83px);top:5px;transform:rotate(0deg)}25%{left:calc(100vw - 83px);top:5px;transform:rotate(90deg)}49%{left:calc(100vw - 83px);top:calc(100vh - 57px);transform:rotate(90deg)}50%{left:calc(100vw - 83px);top:calc(100vh - 57px);transform:rotate(180deg)}74%{left:5px;top:calc(100vh - 57px);transform:rotate(180deg)}75%{left:5px;top:calc(100vh - 57px);transform:rotate(270deg)}99%,100%{left:5px;top:5px;transform:rotate(270deg)}}@media(max-width:900px){.header-fill small,.header-phone{display:none}.header-fill{margin-left:8px;padding-left:8px}.header-fill strong{font-size:.58rem}.frame-sonic{width:58px;height:40px}@keyframes sonicLap{0%{left:4px;top:4px;transform:rotate(0)}24%{left:calc(100vw - 62px);top:4px;transform:rotate(0)}25%{left:calc(100vw - 62px);top:4px;transform:rotate(90deg)}49%{left:calc(100vw - 62px);top:calc(100vh - 44px);transform:rotate(90deg)}50%{left:calc(100vw - 62px);top:calc(100vh - 44px);transform:rotate(180deg)}74%{left:4px;top:calc(100vh - 44px);transform:rotate(180deg)}75%{left:4px;top:calc(100vh - 44px);transform:rotate(270deg)}99%,100%{left:4px;top:4px;transform:rotate(270deg)}}}@media(prefers-reduced-motion:reduce){.frame-sonic{display:none}}
+    /* Marco azul neón flameante */
+    body::after{content:"";position:fixed;z-index:139;inset:5px;pointer-events:none;border:1px solid rgba(122,239,255,.8);box-shadow:inset 0 0 12px #18cfff,inset 0 0 34px rgba(0,92,255,.72),0 0 12px #18cfff;animation:flameBreath 1.35s ease-in-out infinite alternate}.neon-frame.top,.neon-frame.bottom{height:7px!important;background:linear-gradient(90deg,#003dff 0%,#18cfff 18%,#dffcff 29%,#008cff 42%,#fff 50%,#008cff 58%,#dffcff 71%,#18cfff 82%,#003dff 100%)!important;background-size:240% 100%!important;box-shadow:0 0 6px #fff,0 0 15px #18cfff,0 0 34px #0075ff,0 0 58px rgba(0,61,255,.72)!important;filter:saturate(1.35);animation:frameFlow 1.8s linear infinite,flameFlicker .48s ease-in-out infinite alternate!important}.neon-frame.left,.neon-frame.right{width:7px!important;background:linear-gradient(180deg,#003dff 0%,#18cfff 18%,#dffcff 29%,#008cff 42%,#fff 50%,#008cff 58%,#dffcff 71%,#18cfff 82%,#003dff 100%)!important;background-size:100% 240%!important;box-shadow:0 0 6px #fff,0 0 15px #18cfff,0 0 34px #0075ff,0 0 58px rgba(0,61,255,.72)!important;filter:saturate(1.35);animation:frameFlowY 1.8s linear infinite,flameFlicker .52s ease-in-out infinite alternate-reverse!important}.neon-corner{border-width:4px!important;border-color:#dffcff!important;box-shadow:0 0 6px white,0 0 18px #18cfff,0 0 36px #075cff!important;animation:cornerCharge .6s ease-in-out infinite alternate!important}@keyframes flameFlicker{0%{opacity:.72;filter:brightness(.9) saturate(1.2)}35%{opacity:1;filter:brightness(1.5) saturate(1.55)}60%{opacity:.82;filter:brightness(1.1) saturate(1.3)}100%{opacity:1;filter:brightness(1.8) saturate(1.7)}}@keyframes flameBreath{to{box-shadow:inset 0 0 18px #18cfff,inset 0 0 52px rgba(0,92,255,.88),0 0 20px #18cfff}}@media(prefers-reduced-motion:reduce){body::after,.neon-frame,.neon-corner{animation:none!important}}
+    /* Contenido visual junto al logo superior */
+    .header-fill{position:relative;gap:8px;padding-left:22px;overflow:hidden}.header-fill::before{content:"";position:absolute;left:0;top:50%;width:15px;height:2px;background:#18cfff;box-shadow:0 0 8px #18cfff,0 0 16px #075cff}.header-fill::after{content:"";position:absolute;left:0;bottom:2px;width:100%;height:1px;background:linear-gradient(90deg,#18cfff,rgba(24,207,255,0));animation:headerCharge 2s ease-in-out infinite}.header-stats{display:flex;align-items:center;gap:7px}.header-stat{display:flex;align-items:center;gap:7px;min-height:38px;padding:6px 10px;border:1px solid rgba(24,207,255,.22);background:linear-gradient(145deg,rgba(7,92,255,.2),rgba(3,13,27,.84));border-radius:10px;white-space:nowrap}.header-stat i{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#075cff;color:#dffcff;font-style:normal;font-size:.68rem;box-shadow:0 0 10px rgba(24,207,255,.4)}.header-stat div{display:grid}.header-stat b{color:#e9fbff;font-size:.62rem;letter-spacing:.05em}.header-stat small{color:#6f93b8;font-size:.5rem}.header-whatsapp{display:grid;place-items:center;width:38px;height:38px;border:1px solid #18cfff;border-radius:50%;color:#18cfff;font-size:1rem;box-shadow:0 0 13px rgba(24,207,255,.22);transition:.2s}.header-whatsapp:hover{background:#18cfff;color:#020408;box-shadow:0 0 23px #18cfff}@keyframes headerCharge{0%,100%{transform:scaleX(.15);transform-origin:left;opacity:.35}50%{transform:scaleX(1);transform-origin:left;opacity:1}}
+    @media(max-width:1100px){.header-stat:nth-child(3){display:none}.header-stat{padding:5px 8px}.header-phone{display:none}}
+    @media(max-width:900px){.header-fill{padding-left:14px;margin-left:6px}.header-stats{gap:4px}.header-stat{min-height:34px;padding:4px 7px}.header-stat i{width:20px;height:20px}.header-stat small{display:none!important}.header-stat b{font-size:.54rem}.header-stat:nth-child(2){display:flex}.header-whatsapp{display:none}}
+    @media(max-width:470px){.header-stat:nth-child(2){display:none}.header-fill{padding-left:10px}.header-stat{border-radius:99px}.brand-logo-slot{min-width:125px;width:125px}}
+    /* Menú móvil superior siempre visible */
+    @media(max-width:900px){body{padding-bottom:0!important}header{position:fixed!important;top:0;left:0;right:0;z-index:110!important}main{padding-top:148px}.mobile-nav{position:fixed!important;top:74px!important;bottom:auto!important;left:7px!important;right:7px!important;z-index:109!important;min-height:68px;padding:6px!important;border-top:1px solid rgba(24,207,255,.45)!important;border-bottom:1px solid rgba(24,207,255,.45)!important;border-radius:0 0 18px 18px!important;box-shadow:0 10px 30px rgba(0,82,220,.3),0 0 18px rgba(24,207,255,.18)!important}.mobile-nav a,.mobile-nav button{min-height:54px!important}.mobile-nav a.active{background:linear-gradient(145deg,#075cff,#009bd8)!important}.mobile-cart-count{top:0!important}.cart-drawer{z-index:160}.cart-overlay{z-index:150}.toast{z-index:170}.hero{scroll-margin-top:150px}#productos,#seguridad,#contacto{scroll-margin-top:150px}footer{padding-bottom:35px!important}}
+    @media(max-width:470px){main{padding-top:142px}.mobile-nav{top:70px!important;left:4px!important;right:4px!important;min-height:65px}.mobile-nav a,.mobile-nav button{min-height:51px!important;font-size:.48rem!important}.mobile-icon{font-size:1rem!important}.hero{scroll-margin-top:142px}#productos,#seguridad,#contacto{scroll-margin-top:142px}}
+    /* Fotografías reales del catálogo */
+    .product-art.has-photo{display:flex;align-items:center;justify-content:center;padding:9px;isolation:isolate;background:#05101c;overflow:hidden}
+    .product-art.has-photo::before{content:"";display:block;position:absolute;z-index:0;inset:-24px;border:0;border-radius:0;background-image:var(--product-image);background-position:center;background-size:cover;filter:blur(18px) brightness(.48) saturate(1.35);transform:scale(1.12);opacity:.9}
+    .product-art.has-photo::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,rgba(1,8,17,.06),rgba(1,8,17,.32)),radial-gradient(circle at 50% 45%,transparent 35%,rgba(0,0,0,.4) 100%);pointer-events:none}
+    .product-art.has-photo .tag{z-index:4;top:20px;left:20px;border:1px solid rgba(255,255,255,.38);box-shadow:0 5px 18px rgba(0,0,0,.42),0 0 13px rgba(24,207,255,.34);backdrop-filter:blur(8px)}
+    .product-photo{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;object-position:center;border:2px solid #18cfff;border-radius:16px;background:#061a2b;box-shadow:0 15px 32px rgba(0,0,0,.48),0 0 18px rgba(24,207,255,.58),inset 0 0 18px rgba(7,92,255,.24);transform:scale(calc(var(--photo-zoom,1) * 1.04));transition:transform .35s ease,box-shadow .35s ease}
+    .product-card:hover .product-photo{transform:scale(calc(var(--photo-zoom,1) * 1.065));box-shadow:0 18px 38px rgba(0,0,0,.52),0 0 30px rgba(24,207,255,.72)}
+    .cart-item-icon{overflow:hidden}
+    .cart-item-icon img{display:block;width:100%;height:100%;object-fit:cover}
+    /* Portada centrada con la nueva identidad digital */
+    .hero .hero-grid{grid-template-columns:1fr;max-width:920px;text-align:center}
+    .hero .hero-grid>div:first-child{display:flex;flex-direction:column;align-items:center}
+    .hero-brand-combo{width:min(760px,100%);display:flex;flex-direction:column;align-items:center;margin:0 auto 24px}
+    .hero-sonic-top{position:relative;z-index:4;display:block;width:min(700px,92vw);height:470px;margin:0 auto -52px;object-fit:contain;filter:drop-shadow(0 0 20px #18cfff) drop-shadow(0 0 52px rgba(7,92,255,.86));animation:sonicFloat 3.2s ease-in-out infinite}
+    .hero .hero-full-logo{width:min(320px,56%);aspect-ratio:3/2;margin:0 auto;padding:0;border:2px solid #18cfff;border-radius:18px;background:#020408;box-shadow:0 0 22px rgba(24,207,255,.62),0 0 52px rgba(7,92,255,.32)}
+    .hero .hero-full-logo img{position:static;display:block;width:100%;height:100%;object-fit:contain}
+    .hero .hero-full-logo::before,.hero .hero-full-logo::after{display:none}
+    .hero .hero-visual{display:none}
+    .hero p{margin-inline:auto}
+    .hero-actions,.hero-notes{justify-content:center}
+    @media(max-width:560px){.hero-brand-combo{width:100%;margin-bottom:18px}.hero-sonic-top{width:98vw;height:330px;margin-bottom:-44px}.hero .hero-full-logo{width:min(250px,70vw);border-radius:14px}.hero .hero-grid{padding-top:12px}}
+  </style>
+</head>
+
+<body>
+  <canvas id="sonicSky" aria-hidden="true"></canvas>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="neon-frame top"></div>
+  <div class="neon-frame right"></div>
+  <div class="neon-frame bottom"></div>
+  <div class="neon-frame left"></div>
+
+  <div class="neon-corner tl"></div>
+  <div class="neon-corner tr"></div>
+  <div class="neon-corner bl"></div>
+  <div class="neon-corner br"></div>
+
+  <img class="frame-sonic" src="sonic-running-frame.png" alt="" aria-hidden="true">
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">
+        <span class="logo-mark"><span>✦</span></span>
+        <span class="brand-logo-slot">
+          <img src="felix-logo.jpeg" alt="Logo de FeliX Pirotecnia" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+          <span class="brand-logo-fallback">Coloca aquí tu logo</span>
+        </span>
+      </a>
+
+      <div class="header-fill">
+        <div class="header-stats">
+          <span class="header-stat"><i>42</i><span><b>LOCAL 42</b><small>Diversión segura</small></span></span>
+          <span class="header-stat"><i>✦</i><span><b>100 PRODUCTOS</b><small>Catálogo completo</small></span></span>
+          <span class="header-stat"><i>⚡</i><span><b>ATENCIÓN DIRECTA</b><small>Te ayudamos a elegir</small></span></span>
+        </div>
+        <a class="header-whatsapp" href="https://wa.me/525549949268" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">◉</a>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Catálogo</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#contacto">Contacto</a>
+        <a class="nav-cta" href="#contacto">Solicitar cotización</a>
+      </div>
+
+      <button
+        class="cart-trigger"
+        id="cartTrigger"
+        type="button"
+        aria-label="Abrir carrito"
+      >
+        🛒 Carrito
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Luz</span>
+      <span>Color</span>
+      <span>Celebración</span>
+      <span>Momentos inolvidables</span>
+      <span>FeliX Pirotecnia</span>
+      <span>Luz</span>
+      <span>Color</span>
+      <span>Celebración</span>
+      <span>Momentos inolvidables</span>
+      <span>FeliX Pirotecnia</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <!--
+            ESPACIO PARA TU LOGO:
+
+            Guarda la imagen del logo en la misma carpeta que este archivo.
+            Ponle el nombre: logo.png
+
+            Si tu imagen tiene otro nombre, cambia src="logo.png".
+          -->
+          <div class="hero-brand-combo">
+            <img class="hero-sonic-top" src="sonic-felix.png" alt="Sonic con energía azul sobre el logo de FeliX Pirotecnia">
+            <div class="hero-full-logo">
+              <img src="felix-logo-digital.png" alt="Logo digital de FeliX Pirotecnia">
+            </div>
+          </div>
+
+          <span class="presentation-label">Presentación oficial</span>
+          <br>
+
+          <span class="eyebrow">FeliX Pirotecnia · Experiencias nocturnas</span>
+
+          <h1>
+            Enciende lo <span>extraordinario.</span>
+          </h1>
+
+          <p>
+            Pirotecnia seleccionada para celebraciones espectaculares.
+            Atención profesional, productos certificados y orientación para
+            un uso seguro y responsable.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#productos">
+              Ver catálogo <span>→</span>
+            </a>
+
+            <a class="btn-secondary" href="#contacto">
+              Contáctanos
+            </a>
+          </div>
+
+          <div class="hero-notes">
+            <span>Productos certificados</span>
+            <span>Asesoría especializada</span>
+          </div>
+        </div>
+
+        <div
+          class="hero-visual"
+          aria-label="Ilustración abstracta de un fuego artificial"
+        >
+          <div class="red-panel"></div>
+
+          <img class="sonic-art" src="sonic-felix.png" alt="Sonic rodeado de energía azul neón">
+
+          <div class="firework" id="firework">
+            <div class="spark-core"></div>
+          </div>
+
+          <div class="visual-card">
+            <strong>LOCAL 42</strong>
+            <small>diversión segura · efectos especiales</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container feature-grid">
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <div>
+            <strong>Calidad premium</strong>
+            <small>Selección profesional</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">✓</span>
+          <div>
+            <strong>Compra responsable</strong>
+            <small>Orientación para un uso seguro</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">⌖</span>
+          <div>
+            <strong>Entrega local</strong>
+            <small>Consulta zonas disponibles</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">◉</span>
+          <div>
+            <strong>Atención directa</strong>
+            <small>Asesoría personalizada</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="productos">
+      <div class="container">
+        <div class="products-head reveal">
+          <div>
+            <span class="eyebrow">Nuestro catálogo</span>
+
+            <h2 class="section-title">
+              Elige tu próxima <span>experiencia.</span>
+            </h2>
+
+            <p class="section-copy">
+              Opciones para reuniones, celebraciones y eventos.
+              Disponibilidad sujeta a normativa y existencias.
+            </p>
+          </div>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">
+              Todos
+            </button>
+
+            <button class="filter-btn" data-filter="luz">
+              💡 Luz
+            </button>
+
+            <button class="filter-btn" data-filter="color">
+              🎨 Color
+            </button>
+
+            <button class="filter-btn" data-filter="trueno">
+              💥 Trueno fuerte
+            </button>
+
+            <button class="filter-btn" data-filter="baterias">
+              🎆 Baterías
+            </button>
+          </div>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="productSearch"
+              type="search"
+              placeholder="Buscar entre 100 productos..."
+              autocomplete="off"
+            >
+          </label>
+
+          <div class="result-count" id="resultCount">
+            Mostrando 100 productos
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="safety" id="seguridad">
+      <div class="container safety-grid">
+        <div class="reveal">
+          <span class="eyebrow">Primero la seguridad</span>
+
+          <h2 class="section-title">
+            Celebra con responsabilidad.
+          </h2>
+
+          <p class="section-copy">
+            Sigue siempre las instrucciones de cada producto, respeta las
+            distancias recomendadas y consulta las reglas de tu localidad.
+          </p>
+        </div>
+
+        <div class="safety-list reveal">
+          <div class="safety-item">
+            <span>↔</span>
+            <strong>Mantén distancia</strong>
+            <small>Respeta el perímetro indicado.</small>
+          </div>
+
+          <div class="safety-item">
+            <span>♨</span>
+            <strong>Zona despejada</strong>
+            <small>Evita vegetación y materiales inflamables.</small>
+          </div>
+
+          <div class="safety-item">
+            <span>☂</span>
+            <strong>Evita humedad</strong>
+            <small>Conserva el producto seco y cerrado.</small>
+          </div>
+
+          <div class="safety-item">
+            <span>◎</span>
+            <strong>Sigue las instrucciones</strong>
+            <small>No modifiques ni reutilices productos.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-info">
+            <span class="eyebrow">Hablemos</span>
+
+            <h2>Prepara una celebración memorable.</h2>
+
+            <p>
+              Cuéntanos qué tipo de evento estás organizando y te orientaremos
+              sobre las opciones disponibles.
+            </p>
+
+            <div class="contact-detail">
+              <div>
+                <span>●</span>
+                <small>
+                  <b>Teléfono / WhatsApp</b><br>
+                  +52 55 4992 8206
+                </small>
+              </div>
+
+              <div>
+                <span>●</span>
+                <small>
+                  <b>Ubicación</b><br>
+                  Tu ciudad, México
+                </small>
+              </div>
+
+              <div>
+                <span>●</span>
+                <small>
+                  <b>Horario</b><br>
+                  Lun–Sáb · 10:00–19:00
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" required placeholder="Tu nombre">
+            </div>
+
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input
+                id="phone"
+                required
+                type="tel"
+                placeholder="Tu teléfono"
+              >
+            </div>
+
+            <div class="field full">
+              <label for="event">Tipo de evento</label>
+              <input
+                id="event"
+                placeholder="Cumpleaños, boda, celebración..."
+              >
+            </div>
+
+            <div class="field">
+              <label for="eventDate">Fecha del evento</label>
+              <input
+                id="eventDate"
+                required
+                type="date"
+              >
+            </div>
+
+            <div class="field">
+              <label for="eventLocation">Lugar del evento</label>
+              <input
+                id="eventLocation"
+                required
+                autocomplete="street-address"
+                placeholder="Salón, colonia o municipio"
+              >
+            </div>
+
+            <div class="field full">
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                placeholder="Cuéntanos qué estás buscando"
+              ></textarea>
+            </div>
+
+            <button class="btn-primary" type="submit">
+              Enviar solicitud →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <a class="logo" href="#inicio">
+        <span class="footer-logo-slot">
+          <img src="felix-logo.jpeg" alt="Logo de FeliX Pirotecnia" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+          <span class="brand-logo-fallback">Tu logo aquí</span>
+        </span>
+      </a>
+
+      <p>
+        La comercialización y el uso de pirotecnia deben cumplir las leyes y
+        permisos de cada localidad. © <span id="year"></span> FeliX Pirotecnia.
+      </p>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Navegación inferior">
+    <a href="#inicio" class="active">
+      <span class="mobile-icon">⌂</span>
+      <span>Inicio</span>
+    </a>
+
+    <a href="#productos">
+      <span class="mobile-icon">▦</span>
+      <span>Catálogo</span>
+    </a>
+
+    <a href="#seguridad">
+      <span class="mobile-icon">✓</span>
+      <span>Seguridad</span>
+    </a>
+
+    <a href="#contacto">
+      <span class="mobile-icon">✉</span>
+      <span>Contacto</span>
+    </a>
+
+    <button id="mobileCartTrigger" type="button">
+      <span class="mobile-icon">🛒</span>
+      <span>Carrito</span>
+      <span class="mobile-cart-count" id="mobileCartCount">0</span>
+    </button>
+  </nav>
+
+  <a class="mobile-cta" href="#contacto">
+    Solicitar cotización →
+  </a>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Carrito de compras"
+    aria-hidden="true"
+  >
+    <div class="cart-head">
+      <div class="cart-title-wrap">
+        <small class="cart-kicker">FeliX Pirotecnia</small>
+        <h2>Tu selección</h2>
+      </div>
+
+      <button
+        class="cart-close"
+        id="cartClose"
+        type="button"
+        aria-label="Cerrar carrito"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total de cajitas</span>
+        <span id="cartTotal">0 cajitas</span>
+      </div>
+
+      <button class="checkout" id="checkoutButton" type="button" disabled>
+        Continuar pedido por WhatsApp →
+      </button>
+      <p class="checkout-note">Revisa cantidades antes de enviar · Compra responsable 18+</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    (()=>{
+      const canvas=document.querySelector('#sonicSky'),ctx=canvas.getContext('2d');
+      let w,h,dpr,sparks=[];
+      function resize(){dpr=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);sparks=Array.from({length:Math.max(45,Math.floor(w/18))},makeSpark)}
+      function makeSpark(){return{x:Math.random()*w,y:Math.random()*h,len:18+Math.random()*85,speed:4+Math.random()*13,alpha:.15+Math.random()*.72,width:.5+Math.random()*2}}
+      function reset(s){Object.assign(s,makeSpark(),{x:-100-Math.random()*w*.3})}
+      function draw(){ctx.clearRect(0,0,w,h);ctx.save();ctx.globalCompositeOperation='lighter';sparks.forEach(s=>{s.x+=s.speed;if(s.x>w+120)reset(s);const g=ctx.createLinearGradient(s.x,s.y,s.x+s.len,s.y);g.addColorStop(0,'rgba(0,92,255,0)');g.addColorStop(.55,`rgba(0,153,255,${s.alpha})`);g.addColorStop(1,`rgba(150,240,255,${s.alpha})`);ctx.strokeStyle=g;ctx.lineWidth=s.width;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x+s.len,s.y);ctx.stroke();if(Math.random()>.992){ctx.fillStyle='#dffbff';ctx.shadowColor='#18cfff';ctx.shadowBlur=18;ctx.beginPath();ctx.arc(s.x+s.len,s.y,2.5,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}});ctx.restore();requestAnimationFrame(draw)}
+      resize();addEventListener('resize',resize);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(draw)
+    })();
+    const categories = {
+      luz: {
+        label: "Luz",
+        symbol: "✨",
+        description: "Efecto luminoso ideal para celebraciones."
+      },
+
+      color: {
+        label: "Color",
+        symbol: "🌈",
+        description: "Destellos de colores vivos para iluminar la noche."
+      },
+
+      trueno: {
+        label: "Trueno fuerte",
+        symbol: "💥",
+        description: "Efecto sonoro intenso para celebraciones especiales."
+      },
+
+      baterias: {
+        label: "Baterías",
+        symbol: "🎆",
+        description: "Secuencia completa de efectos de luz, color y sonido."
+      }
+    };
+
+    const productNames = {
+      luz: [
+        "Bengala Diamante",
+        "Estrella Blanca",
+        "Luz de Luna",
+        "Chispa Imperial",
+        "Fuente Plateada",
+        "Lucero Nocturno",
+        "Destello Polar",
+        "Bengala Premium",
+        "Cascada Blanca",
+        "Lluvia de Estrellas",
+        "Antorcha Lunar",
+        "Brillo Real",
+        "Fuente Cristal",
+        "Estrella Fugaz",
+        "Chispa Elegante",
+        "Luz del Cielo",
+        "Destello Nevado",
+        "Corona Plateada",
+        "Bengala Gigante",
+        "Lágrima de Luz",
+        "Cometa Blanco",
+        "Resplandor Lunar",
+        "Fuente Nevada",
+        "Chispa Celestial",
+        "Luz Infinita"
+      ],
+
+      color: [
+        "Arcoíris Mágico",
+        "Palmera Multicolor",
+        "Dragón de Colores",
+        "Fuente Tropical",
+        "Cometa Rojo",
+        "Estrella Violeta",
+        "Cascada Esmeralda",
+        "Lluvia Rubí",
+        "Corona Azul",
+        "Jardín de Color",
+        "Rueda Arcoíris",
+        "Mariposa Neon",
+        "Volcán Multicolor",
+        "Fiesta Tropical",
+        "Aurora Boreal",
+        "Flor de Colores",
+        "Estrella Mexicana",
+        "Cielo de Colores",
+        "Fuente Camaleón",
+        "Cometa Dorado",
+        "Lluvia Multicolor",
+        "Palmera Fantasía",
+        "Destello Rosa",
+        "Dragón Esmeralda",
+        "Festival de Color"
+      ],
+
+      trueno: [
+        "Trueno Titán",
+        "Impacto Supremo",
+        "Cañón Nocturno",
+        "Trueno Imperial",
+        "Explosión Máxima",
+        "Titán Rojo",
+        "Golpe del Cielo",
+        "Cañón Gigante",
+        "Trueno Legendario",
+        "Impacto Nocturno",
+        "Furia del Dragón",
+        "Trueno Extremo",
+        "Cañón de Acero",
+        "Impacto Real",
+        "Titán del Cielo",
+        "Trueno Poderoso",
+        "Golpe Imperial",
+        "Cañón Supremo",
+        "Furia Nocturna",
+        "Impacto Titán",
+        "Trueno Centella",
+        "Cañón Especial",
+        "Explosión Imperial",
+        "Trueno Maestro",
+        "Impacto Final"
+      ],
+
+      baterias: [
+        "Batería Gran Fiesta",
+        "Batería Noche Mágica",
+        "Batería Celebración",
+        "Batería Imperial",
+        "Batería Festival",
+        "Batería Dragón",
+        "Batería Suprema",
+        "Batería Multicolor",
+        "Batería Estelar",
+        "Batería Gran Final",
+        "Batería Tormenta",
+        "Batería Fantasía",
+        "Batería Aurora",
+        "Batería Diamante",
+        "Batería Titán",
+        "Batería Cielo Rojo",
+        "Batería Paraíso",
+        "Batería Espectáculo",
+        "Batería Profesional",
+        "Batería Centenario",
+        "Batería Corona",
+        "Batería Leyenda",
+        "Batería Infinita",
+        "Batería Mega Show",
+        "Batería FeliX"
+      ]
+    };
+    const products = [];
+
+    Object.entries(productNames).forEach(([category, names]) => {
+      names.forEach((name, index) => {
+        const information = categories[category];
+
+        products.push({
+          id: products.length + 1,
+          name,
+          category,
+          categoryLabel: information.label,
+          symbol: information.symbol,
+          description: information.description,
+          pieces: [1, 3, 6, 12, 20, 24, 36, 50][index % 8]
+        });
+      });
+    });
+
+    /* Nombrar los cien productos de forma consecutiva. */
+    products.forEach((product, index) => {
+      product.name = `Producto ${index + 1}`;
+    });
+
+    const catalogImages = [
+      ["Abejitas", "abejitas.jpeg"],
+      ["Abejorro", "abejorro.jpeg"],
+      ["Abejorro Mixi", "abejorromixi.jpeg"],
+      ["Abejorro Mixi Vampirito", "abejorromixivampirito.jpeg"],
+      ["Abejorro Spiderman", "abejorrospiderman.jpeg"],
+      ["Adrenocromo", "adrenocromo.jpeg"],
+      ["Adventure Time", "adventuretime.jpeg"],
+      ["Afrodita", "afrodita.jpeg"],
+      ["Araña", "araña.jpeg"],
+      ["Arañitas", "arañitas.jpeg"],
+      ["Avispón", "avispon.jpeg"],
+      ["Avispón Bolsa", "avisponbolsa.jpeg"],
+      ["Batman", "batman.jpeg"],
+      ["Bazuca 2 Pulgadas", "bazuca2pulgadas.jpeg"],
+      ["Bazuquín", "bazuquin.jpeg"],
+      ["Billetes", "billetes.jpeg"],
+      ["Bob Esponja", "bobesponja.jpeg"],
+      ["Bola Barbie", "bolabarbie.jpeg"],
+      ["Bola de Humo Gorila", "boladehumogorila.jpeg"],
+      ["Bola de Humo Mega", "boladehumomega.jpeg"],
+      ["Bola de Luz Chavo", "boladeluzchavo.jpeg"],
+      ["Bombón", "bombon.jpeg"],
+      ["Brain Roots", "brainroots.jpeg"],
+      ["Buscapié", "buscapie.jpeg"],
+      ["Cajitas Bob", "cajitasbob.jpeg"],
+      ["Cajita Silbato", "cajitasilbato.jpeg"],
+      ["Camelia", "camelia.jpeg"],
+      ["Camelia Grande", "cameliagrande.jpeg"],
+      ["Camelias Minions", "cameliasminions.jpeg"],
+      ["Camelias Ositos", "cameliasositos.jpeg"],
+      ["Capibara Cracker", "capibaracracker.jpeg"],
+      ["Capibaras Luminosos", "capibarasluminosos.jpeg"],
+      ["Caramelito", "caramelito.jpeg"],
+      ["Caramelo Grande", "caramelogrande.jpeg"],
+      ["Caramelo Jumbo", "caramelojumbo.jpeg"],
+      ["Caramelo Mediano", "caramelomediano.jpeg"],
+      ["Catarinas", "catarinas.jpeg"],
+      ["Cervesitas", "cervesitas.jpeg"],
+      ["Charro Volador", "charrovolador.jpeg"],
+      ["Chupacabras", "chupacabras.jpeg"],
+      ["Cigarros", "cigarros.jpeg"],
+      ["Cigarros Pall Mall", "cigarrospallmall.jpeg"],
+      ["Color Smoke Bomb", "colorsmokebomb.jpeg"],
+      ["Cometa", "cometa.jpeg"],
+      ["Cometa Especial", "cometaespecial.jpeg"],
+      ["Cometa Especial Morado", "cometaespecialmorado.jpeg"],
+      ["Cometin", "cometin.jpeg"],
+      ["Cometon", "cometon.jpeg"],
+      ["Cracker Boom", "crackerboom.jpeg"],
+      ["Crayones", "crayones.jpeg"],
+      ["Cuete Blanco", "cueteblanco.jpeg"],
+      ["Cuete Blanco Especial", "cueteblancoespecial.jpeg"],
+      ["Dollar", "dollar.jpeg"],
+      ["Dragon Ball Z Cracker", "dragonballzcracker.jpeg"],
+      ["Duvalin", "duvalin.jpeg"],
+      ["El Chavo Cracker", "elcahvocracker.jpeg"],
+      ["Emoji", "emoji.jpeg"],
+      ["Escorpiones", "escorpiones.jpeg"],
+      ["Escupidor de Cracker", "escupidordecracker.jpeg"],
+      ["Escupidor de Diamantina", "escupidordediamantina.jpeg"],
+      ["Escupidor Spiderman", "escupidorspiderman.jpeg"],
+      ["Espantasuegras", "espantasuegras.jpeg"],
+      ["Flash", "flash.jpeg"],
+      ["Flash de Color", "flashdecolor.jpeg"],
+      ["Florero de Color", "florerodecolor.jpeg"],
+      ["Frozen", "frozen.jpeg"],
+      ["Gallinitas", "gallinitas.jpeg"],
+      ["Garapiñados", "garapiñados.jpeg"],
+      ["Gritito", "gritito.jpeg"],
+      ["Harley Quinn", "harleyquinn.jpeg"],
+      ["Hormiguero", "hormiguero.jpeg"],
+      ["Huevo de Pato", "huevodepato.jpeg"],
+      ["Intensamente", "intensamente.jpeg"],
+      ["Juguitos", "juguitos.jpeg"],
+      ["Jumping", "jumping.jpeg"],
+      ["Lilo y Stitch Cracker", "liloystitchcracker.jpeg"],
+      ["Llorona", "llorona.jpeg"],
+      ["Luciérnagas", "luciernagas.jpeg"],
+      ["Luciérnagas Especiales", "luciernagasespeciales.jpeg"],
+      ["Luz de Bengala", "luzdebengala.jpeg"],
+      ["Luz de Bengala Especial", "luzdebengalaespecial.jpeg"],
+      ["Luz de Bengala Grande", "luzdebengalagrande.jpeg"],
+      ["Luz de Bengala Mediana", "luzdebengalamediana.jpeg"],
+      ["Mamut", "mamut.jpeg"],
+      ["Mansión Adams", "mansionadams.jpeg"],
+      ["Maruchan", "maruchan.jpeg"],
+      ["Mazapán", "mazapan.jpeg"],
+      ["Mazapán Cracker con Color", "mazapancrackerconcolor.jpeg"],
+      ["Medusas", "medusas.jpeg"],
+      ["Mexicanitos de Colores", "mexicanitosdecolores.jpeg"],
+      ["Mina de Cracker", "minadecracker.jpeg"],
+      ["Mini Cangrejito", "minicangrejito.jpeg"],
+      ["Mini McQueen", "minimcqueen.jpeg"],
+      ["Minion Cracker", "minioncracker.jpeg"],
+      ["Minions", "minions.jpeg"],
+      ["Mini OVNI Mixi", "miniovnimixi.jpeg"],
+      ["Misil", "misil.jpeg"],
+      ["Misil con Luz", "misilconluz.jpeg"],
+      ["Misiles 25 Shots", "misiles25shots.jpeg"],
+      ["Mosaico Colores", "mosaicocolores.jpeg"],
+      ["Olaf", "olaf.jpeg"],
+      ["Olla Grande", "ollagrande.jpeg"],
+      ["Olla Mediana", "ollamediana.jpeg"],
+      ["Ollitas", "ollitas.jpeg"],
+      ["Orugas", "orugas.jpeg"],
+      ["OVNI", "ovni.jpeg"],
+      ["OVNI Galáctico", "ovnigalactico.jpeg"],
+      ["OVNI Mixi", "ovnimixi.jpeg"],
+      ["Paleta Micky", "paletamicky.jpeg"],
+      ["Paleta Spider", "paletaspider.jpeg"],
+      ["Paleta Stitch", "paletastitch.jpeg"],
+      ["Paloma de Luz", "palomadeluz.jpeg"],
+      ["Paloma Mediana", "palomamediana.jpeg"],
+      ["Patitos", "patitos.jpeg"],
+      ["Pato", "pato.jpeg"],
+      ["Peppa Pig", "peppapig.jpeg"],
+      ["Pirinolas", "pirinolas.jpeg"],
+      ["Pistolita Free Fire", "pistolitafreefire.jpeg"],
+      ["Pitufi Sorpresas", "pitufisorpresas.jpeg"],
+      ["Pulgas", "pulgas.jpeg"],
+      ["Pulgas de Cracker", "pulgasdecracker.jpeg"],
+      ["R-15", "r15.jpeg"],
+      ["Rehilete Cósmico", "rehiletecosmico.jpeg"],
+      ["Revelación de Sexo", "revelaciondesexo.jpeg"],
+      ["Revelación Pirostar", "revelacionpirostar.jpeg"],
+      ["Rifas", "rifas.jpeg"],
+      ["Rockstar", "rockstar.jpeg"],
+      ["Rosa de Cracker", "rosadecracker.jpeg"],
+      ["Rosa de Luz", "rosadelluz.jpeg"],
+      ["Sabritas", "sabritas.jpeg"],
+      ["Silbato", "silbato.jpeg"],
+      ["Silbato Loco", "silbatoloco.jpeg"],
+      ["Silbato Loco Urba", "silbatolocourba.jpeg"],
+      ["Silbato Toro Loco", "silbatotoroloco.jpeg"],
+      ["Sonic", "sonic.jpeg"],
+      ["Sorullo", "sorullo.jpeg"],
+      ["Super Mario", "supermario.jpeg"],
+      ["Super Sonaja", "supersonaja.jpeg"],
+      ["Tamalitos", "tamalitos.jpeg"],
+      ["Tanque de Guerra", "tanquedeguerra.jpeg"],
+      ["Tarolitos de Luz", "tarolitosdeluz.jpeg"],
+      ["The Walking Dead Cracker", "thewalkingdeathcracker.jpeg"],
+      ["Torbellino", "torbellino.jpeg"],
+      ["Toritos", "toritos.jpeg"],
+      ["Tormenta Luminosa", "tormentaluminosa.jpeg"],
+      ["Tornado", "tornado.jpeg"],
+      ["Tortuguitas", "tortuguitas.jpeg"],
+      ["Trabuco", "trabuco.jpeg"],
+      ["Trabuco de Colores", "trabucodecolores.jpeg"],
+      ["Trabuco Especial", "trabucoespecial.jpeg"],
+      ["Trabuco Luz y Cracker", "trabucoluzycracker.jpeg"],
+      ["Trabuco Mixi", "trabucomixi.jpeg"],
+      ["Trabuquito Luminoso", "trabuquitoluminoso.jpeg"],
+      ["Trompito", "trompito.jpeg"],
+      ["Unicornio", "unicornio.jpeg"],
+      ["Vara Chiflador", "Vara Chiflador.jpeg"],
+      ["Vara Pajarera", "vara pajarera.jpeg"],
+      ["Vara Urba", "varaurba.jpeg"],
+      ["Venom", "venom.jpeg"],
+      ["Volcán de Diamantina", "volcan de diamantina.jpeg"]
+    ];
+
+    const photoZooms = {
+      "abejitas.jpeg": 1.12,
+      "abejorro.jpeg": 1.04,
+      "abejorromixi.jpeg": 1.04,
+      "abejorromixivampirito.jpeg": 1.04,
+      "abejorrospiderman.jpeg": 1.04,
+      "adrenocromo.jpeg": 1.52,
+      "adventuretime.jpeg": 1.17,
+      "afrodita.jpeg": 1.15,
+      "araña.jpeg": 1.04,
+      "arañitas.jpeg": 1.13,
+      "avispon.jpeg": 1.04,
+      "avisponbolsa.jpeg": 1.14,
+      "batman.jpeg": 1.04,
+      "bazuca2pulgadas.jpeg": 1.04,
+      "bazuquin.jpeg": 1.04,
+      "billetes.jpeg": 1.09,
+      "bobesponja.jpeg": 1.09,
+      "bolabarbie.jpeg": 1.04,
+      "boladehumogorila.jpeg": 1.04,
+      "boladehumomega.jpeg": 1.04,
+      "boladeluzchavo.jpeg": 1.04,
+      "bombon.jpeg": 1.04,
+      "brainroots.jpeg": 1.04,
+      "buscapie.jpeg": 1.04,
+      "cajitasbob.jpeg": 1.07,
+      "cajitasilbato.jpeg": 1.04,
+      "camelia.jpeg": 1.04,
+      "cameliagrande.jpeg": 1.04,
+      "cameliasminions.jpeg": 1.31,
+      "cameliasositos.jpeg": 1.04,
+      "capibaracracker.jpeg": 1.04,
+      "capibarasluminosos.jpeg": 1.3,
+      "caramelito.jpeg": 1.04,
+      "caramelogrande.jpeg": 1.04,
+      "caramelojumbo.jpeg": 1.1,
+      "caramelomediano.jpeg": 1.04,
+      "catarinas.jpeg": 1.13,
+      "cervesitas.jpeg": 1.04,
+      "charrovolador.jpeg": 1.04,
+      "chupacabras.jpeg": 1.06,
+      "cigarros.jpeg": 1.52,
+      "cigarrospallmall.jpeg": 1.52,
+      "colorsmokebomb.jpeg": 1.04,
+      "cometa.jpeg": 1.04,
+      "cometaespecial.jpeg": 1.04,
+      "cometaespecialmorado.jpeg": 1.04,
+      "cometin.jpeg": 1.19,
+      "cometon.jpeg": 1.11,
+      "crackerboom.jpeg": 1.05,
+      "crayones.jpeg": 1.11,
+      "cueteblanco.jpeg": 1.04,
+      "cueteblancoespecial.jpeg": 1.04,
+      "dollar.jpeg": 1.05,
+      "dragonballzcracker.jpeg": 1.04,
+      "duvalin.jpeg": 1.04,
+      "elcahvocracker.jpeg": 1.04,
+      "emoji.jpeg": 1.16,
+      "escorpiones.jpeg": 1.1,
+      "escupidordecracker.jpeg": 1.1,
+      "escupidordediamantina.jpeg": 1.04,
+      "escupidorspiderman.jpeg": 1.04,
+      "espantasuegras.jpeg": 1.04,
+      "flash.jpeg": 1.15,
+      "flashdecolor.jpeg": 1.38,
+      "florerodecolor.jpeg": 1.35,
+      "frozen.jpeg": 1.04,
+      "gallinitas.jpeg": 1.32,
+      "garapiñados.jpeg": 1.04,
+      "gritito.jpeg": 1.13,
+      "harleyquinn.jpeg": 1.04,
+      "hormiguero.jpeg": 1.1,
+      "huevodepato.jpeg": 1.4,
+      "intensamente.jpeg": 1.04,
+      "juguitos.jpeg": 1.52,
+      "jumping.jpeg": 1.29,
+      "liloystitchcracker.jpeg": 1.07,
+      "llorona.jpeg": 1.04,
+      "luciernagas.jpeg": 1.4,
+      "luciernagasespeciales.jpeg": 1.1,
+      "luzdebengala.jpeg": 1.04,
+      "luzdebengalaespecial.jpeg": 1.04,
+      "luzdebengalagrande.jpeg": 1.04,
+      "luzdebengalamediana.jpeg": 1.04,
+      "mamut.jpeg": 1.27,
+      "mansionadams.jpeg": 1.09,
+      "maruchan.jpeg": 1.19,
+      "mazapan.jpeg": 1.16,
+      "mazapancrackerconcolor.jpeg": 1.04,
+      "medusas.jpeg": 1.05,
+      "mexicanitosdecolores.jpeg": 1.04,
+      "minadecracker.jpeg": 1.06,
+      "minicangrejito.jpeg": 1.16,
+      "minimcqueen.jpeg": 1.15,
+      "minioncracker.jpeg": 1.04,
+      "minions.jpeg": 1.04,
+      "miniovnimixi.jpeg": 1.14,
+      "misil.jpeg": 1.07,
+      "misilconluz.jpeg": 1.04,
+      "misiles25shots.jpeg": 1.04,
+      "mosaicocolores.jpeg": 1.04,
+      "olaf.jpeg": 1.04,
+      "ollagrande.jpeg": 1.05,
+      "ollamediana.jpeg": 1.28,
+      "ollitas.jpeg": 1.39,
+      "orugas.jpeg": 1.04,
+      "ovni.jpeg": 1.12,
+      "ovnigalactico.jpeg": 1.16,
+      "ovnimixi.jpeg": 1.21,
+      "paletamicky.jpeg": 1.04,
+      "paletaspider.jpeg": 1.04,
+      "paletastitch.jpeg": 1.04,
+      "palomadeluz.jpeg": 1.14,
+      "palomamediana.jpeg": 1.04,
+      "patitos.jpeg": 1.21,
+      "pato.jpeg": 1.04,
+      "peppapig.jpeg": 1.15,
+      "pirinolas.jpeg": 1.31,
+      "pistolitafreefire.jpeg": 1.04,
+      "pitufisorpresas.jpeg": 1.04,
+      "pulgas.jpeg": 1.11,
+      "pulgasdecracker.jpeg": 1.04,
+      "r15.jpeg": 1.04,
+      "rehiletecosmico.jpeg": 1.1,
+      "revelaciondesexo.jpeg": 1.05,
+      "revelacionpirostar.jpeg": 1.08,
+      "rifas.jpeg": 1.04,
+      "rockstar.jpeg": 1.04,
+      "rosadecracker.jpeg": 1.19,
+      "rosadelluz.jpeg": 1.17,
+      "sabritas.jpeg": 1.04,
+      "silbato.jpeg": 1.42,
+      "silbatoloco.jpeg": 1.19,
+      "silbatolocourba.jpeg": 1.29,
+      "silbatotoroloco.jpeg": 1.19,
+      "sonic.jpeg": 1.29,
+      "sorullo.jpeg": 1.21,
+      "supermario.jpeg": 1.11,
+      "supersonaja.jpeg": 1.04,
+      "tamalitos.jpeg": 1.04,
+      "tanquedeguerra.jpeg": 1.04,
+      "tarolitosdeluz.jpeg": 1.04,
+      "thewalkingdeathcracker.jpeg": 1.04,
+      "torbellino.jpeg": 1.12,
+      "toritos.jpeg": 1.04,
+      "tormentaluminosa.jpeg": 1.04,
+      "tornado.jpeg": 1.04,
+      "tortuguitas.jpeg": 1.16,
+      "trabuco.jpeg": 1.21,
+      "trabucodecolores.jpeg": 1.04,
+      "trabucoespecial.jpeg": 1.21,
+      "trabucoluzycracker.jpeg": 1.05,
+      "trabucomixi.jpeg": 1.33,
+      "trabuquitoluminoso.jpeg": 1.43,
+      "trompito.jpeg": 1.29,
+      "unicornio.jpeg": 1.04,
+      "Vara Chiflador.jpeg": 1.34,
+      "vara pajarera.jpeg": 1.04,
+      "varaurba.jpeg": 1.25,
+      "venom.jpeg": 1.52,
+      "volcan de diamantina.jpeg": 1.27
+    };
+
+    catalogImages.forEach(([name, file], index) => {
+      if (!products[index]) {
+        const categoryKeys = Object.keys(categories);
+        const category = categoryKeys[index % categoryKeys.length];
+        const information = categories[category];
+
+        products.push({
+          id: index + 1,
+          name,
+          category,
+          categoryLabel: information.label,
+          symbol: information.symbol,
+          description: information.description,
+          pieces: [1, 3, 6, 12, 20, 24, 36, 50][index % 8]
+        });
+      }
+
+      Object.assign(products[index], {
+        name,
+        image: file,
+        photoZoom: photoZooms[file] || 1
+      });
+    });
+
+    products.length = catalogImages.length;
+
+    const firework = document.querySelector("#firework");
+
+    for (let index = 0; index < 28; index++) {
+      const ray = document.createElement("span");
+
+      ray.className = "ray";
+      ray.style.transform = `rotate(${index * (360 / 28)}deg)`;
+      ray.style.opacity = 0.35 + Math.random() * 0.65;
+      ray.style.width = `${32 + Math.random() * 20}%`;
+
+      firework.appendChild(ray);
+    }
+
+    const menuButton = document.querySelector("#menuBtn");
+    const navLinks = document.querySelector("#navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const menuIsOpen = navLinks.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", menuIsOpen);
+      menuButton.textContent = menuIsOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    const productGrid = document.querySelector("#productGrid");
+    const resultCount = document.querySelector("#resultCount");
+    const searchInput = document.querySelector("#productSearch");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    let activeFilter = "all";
+
+    function renderProducts() {
+      const searchTerm = searchInput.value
+        .trim()
+        .toLocaleLowerCase("es");
+
+      const visibleProducts = products.filter(product => {
+        const matchesCategory =
+          activeFilter === "all" ||
+          product.category === activeFilter;
+
+        const matchesSearch =
+          product.name
+            .toLocaleLowerCase("es")
+            .includes(searchTerm) ||
+          product.categoryLabel
+            .toLocaleLowerCase("es")
+            .includes(searchTerm);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      productGrid.innerHTML = visibleProducts
+        .map(product => {
+          return `
+            <article
+              class="product-card"
+              data-category="${product.category}"
+            >
+              <div class="product-art ${product.image ? "has-photo" : ""}" ${product.image ? `style="--product-image:url('${product.image}');--photo-zoom:${product.photoZoom}"` : ""}>
+                <span class="tag">
+                  Producto ${String(product.id).padStart(2, "0")}
+                </span>
+
+                ${product.image
+                  ? `<img class="product-photo" src="${product.image}" alt="${product.name}" loading="lazy">`
+                  : `<span class="symbol">${product.symbol}</span>`}
+              </div>
+
+              <div class="product-info">
+                <span class="product-category">
+                  ${product.categoryLabel}
+                </span>
+
+                <h3>${product.name}</h3>
+
+                <div class="product-meta">
+                  <span class="price">
+                    Contiene ${product.pieces} piezas
+                  </span>
+
+                  <button
+                    class="add-cart"
+                    type="button"
+                    data-id="${product.id}"
+                  >
+                    Agregar +
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+
+      resultCount.textContent =
+        `${visibleProducts.length} ${
+          visibleProducts.length === 1
+            ? "producto disponible"
+            : "productos disponibles"
+        }`;
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        document
+          .querySelector(".filter-btn.active")
+          ?.classList.remove("active");
+
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+
+        renderProducts();
+      });
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+
+    renderProducts();
+
+    const cartDrawer = document.querySelector("#cartDrawer");
+    const cartOverlay = document.querySelector("#cartOverlay");
+    const cartItems = document.querySelector("#cartItems");
+    const cartCount = document.querySelector("#cartCount");
+    const mobileCartCount =
+      document.querySelector("#mobileCartCount");
+    const cartTotal = document.querySelector("#cartTotal");
+    const checkoutButton =
+      document.querySelector("#checkoutButton");
+    const cartTrigger = document.querySelector("#cartTrigger");
+    const mobileCartTrigger =
+      document.querySelector("#mobileCartTrigger");
+    const cartClose = document.querySelector("#cartClose");
+
+    let cart = [];
+
+    try {
+      cart =
+        JSON.parse(
+          localStorage.getItem("laPolvoraCart100")
+        ) || [];
+    } catch (error) {
+      cart = [];
+    }
+
+    function saveCart() {
+      localStorage.setItem(
+        "laPolvoraCart100",
+        JSON.stringify(cart)
+      );
+
+      renderCart();
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open");
+      cartOverlay.classList.add("open");
+
+      cartDrawer.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove("open");
+      cartOverlay.classList.remove("open");
+
+      cartDrawer.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function calculateTotalBoxes() {
+      return cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
+    }
+
+    function renderCart() {
+      const totalUnits = cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
+
+      const totalBoxes = calculateTotalBoxes();
+
+      cartCount.textContent = totalUnits;
+      mobileCartCount.textContent = totalUnits;
+
+      cartTotal.textContent =
+        `${totalBoxes.toLocaleString("es-MX")} ${totalBoxes === 1 ? "cajita" : "cajitas"}`;
+
+      checkoutButton.disabled = cart.length === 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            <div>
+              <span>🛒</span>
+              <strong>Tu carrito está vacío</strong>
+              <p>Agrega productos desde el catálogo.</p>
+            </div>
+          </div>
+        `;
+
+        return;
+      }
+
+      cartItems.innerHTML = cart
+        .map(item => {
+          const product = products.find(
+            product => product.id === item.id
+          );
+
+          if (!product) {
+            return "";
+          }
+
+          return `
+            <div class="cart-item">
+              <div class="cart-item-icon">
+                ${product.image
+                  ? `<img src="${product.image}" alt="" loading="lazy">`
+                  : product.symbol}
+              </div>
+
+              <div>
+                <h3>${product.name}</h3>
+
+                <div class="cart-item-price">
+                  Contiene ${product.pieces} piezas
+                </div>
+
+                <div class="quantity">
+                  <button
+                    type="button"
+                    data-action="minus"
+                    data-id="${item.id}"
+                    aria-label="Quitar una unidad"
+                  >
+                    −
+                  </button>
+
+                  <span>${item.quantity}</span>
+
+                  <button
+                    type="button"
+                    data-action="plus"
+                    data-id="${item.id}"
+                    aria-label="Agregar una unidad"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <button
+                class="remove-item"
+                type="button"
+                data-action="remove"
+                data-id="${item.id}"
+                aria-label="Eliminar producto"
+              >
+                ×
+              </button>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    productGrid.addEventListener("click", event => {
+      const button = event.target.closest(".add-cart");
+
+      if (!button) {
+        return;
+      }
+
+      const productId = Number(button.dataset.id);
+
+      const existingProduct = cart.find(
+        item => item.id === productId
+      );
+
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({
+          id: productId,
+          quantity: 1
+        });
+      }
+
+      saveCart();
+      openCart();
+    });
+
+    cartItems.addEventListener("click", event => {
+      const button = event.target.closest("[data-action]");
+
+      if (!button) {
+        return;
+      }
+
+      const productId = Number(button.dataset.id);
+      const action = button.dataset.action;
+
+      const cartItem = cart.find(
+        item => item.id === productId
+      );
+
+      if (action === "remove") {
+        cart = cart.filter(
+          item => item.id !== productId
+        );
+      }
+
+      if (action === "plus" && cartItem) {
+        cartItem.quantity += 1;
+      }
+
+      if (action === "minus" && cartItem) {
+        cartItem.quantity -= 1;
+      }
+
+      cart = cart.filter(item => item.quantity > 0);
+
+      saveCart();
+    });
+
+    cartTrigger.addEventListener("click", openCart);
+    mobileCartTrigger.addEventListener("click", openCart);
+    cartClose.addEventListener("click", closeCart);
+    cartOverlay.addEventListener("click", closeCart);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeCart();
+      }
+    });
+
+    checkoutButton.addEventListener("click", () => {
+      if (cart.length === 0) {
+        return;
+      }
+
+      /*
+        COLOCA AQUÍ TU NÚMERO DE WHATSAPP.
+
+        Debe llevar el código del país, pero no debe
+        tener el signo +, espacios ni guiones.
+
+        Ejemplo de México:
+        525512345678
+      */
+      const whatsappNumber = "525549949268";
+
+      const orderLines = cart.map(item => {
+        const product = products.find(
+          product => product.id === item.id
+        );
+
+        return (
+          `• ${item.quantity} ${item.quantity === 1 ? "cajita" : "cajitas"} de ${product.name}` +
+          ` — contiene ${product.pieces} piezas por cajita`
+        );
+      });
+
+      const totalBoxes = calculateTotalBoxes();
+
+      const whatsappMessage = [
+        "Hola, quiero realizar el siguiente pedido en FeliX Pirotecnia:",
+        "",
+        ...orderLines,
+        "",
+        `TOTAL DE CAJITAS: ${totalBoxes.toLocaleString("es-MX")}`,
+        "",
+        "¿Me pueden confirmar la disponibilidad y la forma de entrega?"
+      ].join("\n");
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}` +
+        `?text=${encodeURIComponent(whatsappMessage)}`;
+
+      window.open(
+        whatsappUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+
+    renderCart();
+
+    const scrollProgress =
+      document.querySelector("#scrollProgress");
+
+    function updateScrollProgress() {
+      const scrollableHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const percentage =
+        scrollableHeight > 0
+          ? (window.scrollY / scrollableHeight) * 100
+          : 0;
+
+      scrollProgress.style.width = `${percentage}%`;
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateScrollProgress,
+      { passive: true }
+    );
+
+    updateScrollProgress();
+
+    const mobileLinks =
+      document.querySelectorAll(".mobile-nav a");
+
+    const mobileSections =
+      document.querySelectorAll(
+        "#inicio, #productos, #seguridad, #contacto"
+      );
+
+    const mobileNavigationObserver =
+      new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            mobileLinks.forEach(link => {
+              const sectionMatches =
+                link.getAttribute("href") ===
+                `#${entry.target.id}`;
+
+              link.classList.toggle(
+                "active",
+                sectionMatches
+              );
+            });
+          });
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px",
+          threshold: 0
+        }
+      );
+
+    mobileSections.forEach(section => {
+      mobileNavigationObserver.observe(section);
+    });
+
+    const toast = document.querySelector("#toast");
+    const contactForm =
+      document.querySelector("#contactForm");
+
+    contactForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const customerName =
+        document.querySelector("#name").value.trim();
+
+      const customerPhone =
+        document.querySelector("#phone").value.trim();
+
+      const eventType =
+        document.querySelector("#event").value.trim();
+
+      const eventDate =
+        document.querySelector("#eventDate").value;
+
+      const eventLocation =
+        document.querySelector("#eventLocation").value.trim();
+
+      const formattedEventDate = eventDate
+        ? new Intl.DateTimeFormat("es-MX", {
+            dateStyle: "long",
+            timeZone: "UTC"
+          }).format(new Date(`${eventDate}T00:00:00Z`))
+        : "No especificada";
+
+      const customerMessage =
+        document.querySelector("#message").value.trim();
+
+      /*
+        Este es el mismo número de WhatsApp utilizado
+        para enviar los pedidos del carrito.
+      */
+      const whatsappNumber = "525549949268";
+
+      const contactMessage = [
+        "Hola, quiero solicitar información en FeliX Pirotecnia.",
+        "",
+        `Nombre: ${customerName}`,
+        `Teléfono: ${customerPhone}`,
+        `Tipo de evento: ${eventType || "No especificado"}`,
+        `Fecha del evento: ${formattedEventDate}`,
+        `Lugar del evento: ${eventLocation}`,
+        `Mensaje: ${customerMessage || "Quiero conocer las opciones disponibles."}`
+      ].join("\n");
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}` +
+        `?text=${encodeURIComponent(contactMessage)}`;
+
+      toast.textContent =
+        "Abriendo WhatsApp para enviar tu solicitud…";
+
+      toast.classList.add("show");
+
+      window.open(
+        whatsappUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+    });
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+        revealObserver.observe(element);
+      });
+
+    document.querySelector("#year").textContent =
+      new Date().getFullYear();
+
+    document.querySelector("#eventDate").min =
+      new Date().toISOString().split("T")[0];
+  </script>
+</body>
+</html>
